@@ -1,4 +1,4 @@
-function items({greeting}) {
+function Myitems({greeting}) {
   return (
     <div>
         <h1>{greeting} USUARIO</h1>
@@ -6,4 +6,4 @@ function items({greeting}) {
   )
 }
 
-export default items
+export default Myitems
