@@ -1,13 +1,13 @@
 import logo from "../assets/img/logo.png"
 import "./navbar.css"
 import { BiCartDownload } from "react-icons/bi";
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <>
             <nav className="navBar">
-                <div className="logo">
-                    <img src={logo} className="logo-img" alt=''></img>
+                <div className="logo">                    
+                    <Link to={"/"}><img src={logo} className="logo-img" alt=''></img></Link>
                 </div>
                 <div className="nav-div-list">
                     <ul className="nav-list">
@@ -31,7 +31,6 @@ function Navbar() {
                 </div>
                 
             </nav>
-            <Outlet/>
         </>
     )
 }
