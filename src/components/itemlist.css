@@ -1,0 +1,34 @@
+.contenedor-productos {
+    display: flex; /* Utilizar flexbox */
+    flex-wrap: wrap; /* Permitir que los productos se envuelvan a la siguiente línea si no caben en el contenedor */
+    
+}
+
+.producto {
+    width: calc(33.33% - 20px); /* Ancho de cada producto (el 20px es el espacio entre productos) */
+    margin-right: 20px; /* Espacio entre productos */
+    margin-bottom: 20px; /* Espacio inferior para separar los productos */
+    border: 1px solid #ccc; /* Borde del rectángulo */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interior */
+    background-color: blanchedalmond;
+}
+
+.producto:last-child {
+    margin-right: 0; /* Eliminar margen derecho del último producto en una fila */
+}
+
+.producto h2 {
+    margin-top: 0; /* Eliminar margen superior del título */
+}
+
+.producto p {
+    margin-bottom: 10px; /* Margen inferior para separar los párrafos */
+}
+
+.link{ 
+    text-decoration: none;
+    color: inherit; 
+}
+
+/* Estilos adicionales según sea necesario */

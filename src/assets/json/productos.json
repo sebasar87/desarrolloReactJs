@@ -4,69 +4,79 @@
         "nombre": "Paracetamol",
         "descripcion": "Analgesico y antifebril ampliamente utilizado para aliviar dolores leves a moderados y reducir la fiebre.",
         "imagen": "ruta/a/paracetamol.jpg",
-        "categoria": "Analgésicos"
+        "categoria": "Analgésicos",
+        "precio": 10.99
     },
     {
         "id": 2,
         "nombre": "Ibuprofeno",
         "descripcion": "Antiinflamatorio y analgésico eficaz en el alivio de dolores musculares, dolores de cabeza y reducción de la inflamación.",
         "imagen": "ruta/a/ibuprofeno.jpg",
-        "categoria": "Analgésicos"
+        "categoria": "Analgésicos",
+        "precio": 8.5
     },
     {
         "id": 3,
         "nombre": "Omeprazol",
         "descripcion": "Antiácido y antiulceroso que reduce la producción de ácido estomacal, aliviando el reflujo ácido y las úlceras estomacales.",
         "imagen": "ruta/a/omeprazol.jpg",
-        "categoria": "Antiulcerosos"
+        "categoria": "Antiulcerosos",
+        "precio": 15.25
     },
     {
         "id": 4,
         "nombre": "Aspirina",
         "descripcion": "Analgésico y antipirético efectivo para aliviar dolores de cabeza, dolores musculares y fiebre, así como para reducir el riesgo de coágulos sanguíneos.",
         "imagen": "ruta/a/aspirina.jpg",
-        "categoria": "Analgésicos"
+        "categoria": "Analgésicos",
+        "precio": 7.75
     },
     {
         "id": 5,
         "nombre": "Loratadina",
         "descripcion": "Antihistamínico que alivia los síntomas de la alergia, como estornudos, picazón en los ojos y secreción nasal, sin causar sueño.",
         "imagen": "ruta/a/loratadina.jpg",
-        "categoria": "Antihistamínicos"
+        "categoria": "Antihistamínicos",
+        "precio": 12.0
     },
     {
         "id": 6,
         "nombre": "Amoxicilina",
         "descripcion": "Antibiótico de amplio espectro utilizado para tratar infecciones bacterianas como sinusitis, infecciones del tracto respiratorio y de la piel.",
         "imagen": "ruta/a/amoxicilina.jpg",
-        "categoria": "Antibióticos"
+        "categoria": "Antibióticos",
+        "precio": 9.99
     },
     {
         "id": 7,
         "nombre": "Diclofenaco",
         "descripcion": "Antiinflamatorio no esteroideo (AINE) que alivia el dolor y reduce la inflamación causada por afecciones como artritis y lesiones musculares.",
         "imagen": "ruta/a/diclofenaco.jpg",
-        "categoria": "Antiinflamatorios"
+        "categoria": "Antiinflamatorios",
+        "precio": 11.5
     },
     {
         "id": 8,
         "nombre": "Cetirizina",
         "descripcion": "Antihistamínico que proporciona alivio rápido y duradero de los síntomas de alergia, como estornudos, picazón y ojos llorosos.",
         "imagen": "ruta/a/cetirizina.jpg",
-        "categoria": "Antihistamínicos"
+        "categoria": "Antihistamínicos",
+        "precio": 14.75
     },
     {
         "id": 9,
         "nombre": "Ranitidina",
         "descripcion": "Antiácido y antiulceroso que reduce la producción de ácido estomacal, aliviando la acidez estomacal y las úlceras gástricas.",
         "imagen": "ruta/a/ranitidina.jpg",
-        "categoria": "Antiulcerosos"
+        "categoria": "Antiulcerosos",
+        "precio": 10.25
     },
     {
         "id": 10,
         "nombre": "Clorfenamina",
         "descripcion": "Antihistamínico utilizado para tratar alergias nasales y oculares, así como síntomas de resfriado, como secreción nasal y estornudos.",
         "imagen": "ruta/a/clorfenamina.jpg",
-        "categoria": "Antihistamínicos"
+        "categoria": "Antihistamínicos",
+        "precio": 6.5
     }
 ]
