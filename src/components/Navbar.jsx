@@ -7,12 +7,12 @@ function Navbar() {
         <>
             <nav className="navBar">
                 <div className="logo">                    
-                    <Link to={"/productos"}><img src={logo} className="logo-img" alt=''></img></Link>
+                    <Link to={"/"}><img src={logo} className="logo-img" alt=''></img></Link>
                 </div>
                 <div className="nav-div-list">
                     <ul className="nav-list">
                         <li className="nav-list-li">
-                            <Link to={"/productos"}>Inicio</Link>
+                            <Link to={"/item"}>Inicio</Link>
                         </li>
                         <li className="nav-list-li">
                             <Link to={"/compras"}>Mis compras</Link>

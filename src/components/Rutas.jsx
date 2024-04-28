@@ -5,6 +5,7 @@ import Compras from "../assets/page/Compras"
 import Ofertas from "../assets/page/Ofertas"
 import NotFound from "../assets/page/NotFound"
 import ItemListContainer from "./ItemListContainer"
+import ItemListDetailConteiner from "./ItemListDetailConteiner"
 
 function Rutas() {
     return (
@@ -14,7 +15,8 @@ function Rutas() {
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='/compras' element={<Compras />} />
                 <Route path='/ofertas' element={<Ofertas />} />
-                <Route path='/productos' element={<ItemListContainer />}/>
+                <Route path='/item' element={<ItemListContainer />}/>
+                <Route path='/item/:id' element={<ItemListDetailConteiner />}/>
                 <Route path='*' element={<NotFound/>} />
             </Routes>
         </>

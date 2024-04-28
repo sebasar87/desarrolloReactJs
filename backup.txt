@@ -27,9 +27,43 @@ function ItemListContainer() {
   return (
     <div>
       <h1>Datelles de Producto</h1>
-      {datos && datos.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+      {datos && <Itemlist datos={datos}/>}
     </div>
   )
 }
 
 export default ItemListContainer
+
+
+
+
+
+
+
+
+
+
+
+
+
+import { Link } from "react-router-dom";
+import "./itemlist.css"
+
+function Itemlist({ datos }) {
+  return (
+    <div className="contenedor-productos">
+      {datos.map((item) => (
+        <div key={item.id} className="producto">
+          <Link to={`/item/${item.id}`} className="link">
+            <h2>{item.nombre}</h2>
+            <p>{item.descripcion}</p>
+            <p>Categoría: {item.categoria}</p>
+            <p>Precio: {item.precio}</p>
+          </Link>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default Itemlist

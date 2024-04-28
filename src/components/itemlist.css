@@ -1,10 +1,10 @@
 .contenedor-productos {
     display: flex; /* Utilizar flexbox */
-    flex-wrap: wrap; /* Permitir que los productos se envuelvan a la siguiente línea si no caben en el contenedor */
-    
+    /*flex-wrap: wrap; /* Permitir que los productos se envuelvan a la siguiente línea si no caben en el contenedor */
 }
 
 .producto {
+    display: inline-block;
     width: calc(33.33% - 20px); /* Ancho de cada producto (el 20px es el espacio entre productos) */
     margin-right: 20px; /* Espacio entre productos */
     margin-bottom: 20px; /* Espacio inferior para separar los productos */
@@ -12,6 +12,7 @@
     border-radius: 5px; /* Bordes redondeados */
     padding: 10px; /* Espacio interior */
     background-color: blanchedalmond;
+    word-wrap: break-word;
 }
 
 .producto:last-child {
