@@ -3,14 +3,15 @@ import { BrowserRouter } from "react-router-dom"
 import React from "react"
 import Texto from "./components/Texto"
 import Rutas from "./components/Rutas"
-import ItemListContainer from "./components/ItemListContainer"
+import Main from "./components/Main"
 
 
 function App() {
   return (
     <BrowserRouter>
       <Header/>
-      <Rutas/>  
+      <Rutas/> 
+      <Main/>
       <Texto/>
     </BrowserRouter>
   )

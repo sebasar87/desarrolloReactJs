@@ -12,6 +12,12 @@ function Navbar() {
                 <div className="nav-div-list">
                     <ul className="nav-list">
                         <li className="nav-list-li">
+                            <Link to={"/category/Refined"}>refined</Link>
+                        </li>
+                        <li className="nav-list-li">
+                            <Link to={"/category/Ergonomic"}>ergonomic</Link>
+                        </li>
+                        <li className="nav-list-li">
                             <Link to={"/item"}>Inicio</Link>
                         </li>
                         <li className="nav-list-li">

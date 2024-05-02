@@ -17,6 +17,7 @@ function Rutas() {
                 <Route path='/ofertas' element={<Ofertas />} />
                 <Route path='/item' element={<ItemListContainer />}/>
                 <Route path='/item/:id' element={<ItemListDetailConteiner />}/>
+                <Route path='/category/:categoryid' element={<ItemListContainer/>}/>
                 <Route path='*' element={<NotFound/>} />
             </Routes>
         </>
