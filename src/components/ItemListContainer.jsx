@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
+import Main from "./Main"
+import "./itemlist.css"
 import Itemlist from "./Itemlist"
 
 function ItemListContainer() {
@@ -33,16 +35,24 @@ function ItemListContainer() {
 },[categoryid])
 if(categoryid!=null){
   return (
-    <div>
-      <h1>categoria de Producto</h1>
-      {producto && producto.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+    <div class="menu-Productos">
+      {<Main />}
+      <h1>Productos</h1>
+        <div class="contenedor-productos">          
+          {producto && producto.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+        </div>
     </div>
   )
 }
   return (
     <div>
-      <h1>Datelles de Producto</h1>
-      {datos && datos.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+      <h1>Productos</h1>
+      <div class="menu-Productos">
+        {<Main />}
+          <div class="contenedor-productos">
+            {datos && datos.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+          </div>
+      </div>
     </div>
   )
 }

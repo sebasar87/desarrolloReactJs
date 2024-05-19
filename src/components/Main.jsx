@@ -1,7 +1,7 @@
-
+import "./main.css"
 function Main() {
   return (
-    <div>Main</div>
+    <div class="menuLateral">Main</div>
   )
 }
 

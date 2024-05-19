@@ -1,0 +1,14 @@
+.menuLateral {
+    /*position: fixed; /* Fija el div en su posición incluso cuando se hace scroll */
+    display: flex;
+    padding-top: 20px;
+    margin-top: 20px;
+    top: auto; /* Alinea el div con la parte superior de la pantalla */
+    left: 0; /* Alinea el div con el lado derecho de la pantalla */
+    width: 150px; /* Ancho del menú lateral */
+    height: 250px; /* Altura completa de la pantalla */
+    background-color: #eae3e3; /* Color de fondo del menú */
+    color: rgb(144, 8, 8); /* Color del texto */
+    overflow-x: hidden; /* Deshabilita el scroll horizontal */
+    padding-top: 20px; /* Espacio superior dentro del menú */
+}
