@@ -35,12 +35,14 @@ function ItemListContainer() {
 },[categoryid])
 if(categoryid!=null){
   return (
-    <div class="menu-Productos">
-      {<Main />}
+    <div>
       <h1>Productos</h1>
-        <div class="contenedor-productos">          
-          {producto && producto.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
-        </div>
+      <div class="menu-Productos">
+          {<Main />}
+          <div class="contenedor-productos">          
+            {producto && producto.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+          </div>
+      </div>
     </div>
   )
 }

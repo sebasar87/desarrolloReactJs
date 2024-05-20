@@ -10,13 +10,7 @@ function Navbar() {
                     <Link to={"/"}><img src={logo} className="logo-img" alt=''></img></Link>
                 </div>
                 <div className="nav-div-list">
-                    <ul className="nav-list">
-                        <li className="nav-list-li">
-                            <Link to={"/category/Refined"}>refined</Link>
-                        </li>
-                        <li className="nav-list-li">
-                            <Link to={"/category/Ergonomic"}>ergonomic</Link>
-                        </li>
+                    <ul className="nav-list">                        
                         <li className="nav-list-li">
                             <Link to={"/item"}>Inicio</Link>
                         </li>
