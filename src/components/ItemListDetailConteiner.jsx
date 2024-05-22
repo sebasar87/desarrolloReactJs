@@ -2,29 +2,29 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
 import Itemlist from "./Itemlist"
+import { collection,getDocs,getFirestore,query,where } from "firebase/firestore";
 
 function ItemListDetailConteiner() {
     const {id}=useParams();
-    const [datos,setDatos] = useState(null);
     const [producto, setProducto] = useState(null);
     useEffect(()=>{
-    const urlJson = "https://662d82f3a7dda1fa378ac0a6.mockapi.io/api/v1/Articulos"
-    fetch(urlJson)
-    
-    .then(respuesta => {
-      if (!respuesta.ok) {
-          throw new Error("No hay información");
-      }
-      return respuesta.json();
-  })
-        .then(data=>{
-          setDatos(data);
-          const producto = data.find((prod) => prod.id === id);
-          setProducto(producto);
-        })
-        .catch (error=>{
-          console.error("Error:", error);
-          });
+      const db=getFirestore();
+      const itemCollection=collection(db,"productos")
+      console.log("estos son id", id);
+      const dato = query(itemCollection, where("id","==",id));
+      console.log("estos son datos", dato);
+      getDocs(dato).then(snapshot => {
+        const productos = snapshot.docs.map(docu => docu.data());
+        console.log("estos son productos", productos);
+        if (productos.length > 0) {
+          setProducto(productos[0]); 
+        } else {
+          console.log("Producto no encontrado");
+        }
+        console.log("esto es producto", producto);
+      }).catch(error => {
+        console.error("Error obteniendo documentos: ", error);
+      });
      
   },[id])
 

@@ -6,10 +6,19 @@ function Main() {
       <h3>Filtrado</h3>
       <ul class="main-lista">
         <li class="main-lista-li">
-          <Link to={"/category/Refined"}>refined</Link>
+          <Link to={"/category/Analgésicos"}>Analgésicos</Link>
         </li>
         <li class="main-lista-li">
-          <Link to={"/category/Ergonomic"}>ergonomic</Link>
+          <Link to={"/category/Antiulcerosos"}>Antiulcerosos</Link>
+        </li>
+        <li class="main-lista-li">
+          <Link to={"/category/Antihistamínicos"}>Antihistamínicos</Link>
+        </li>
+        <li class="main-lista-li">
+          <Link to={"/category/Antiinflamatorios"}>Antiinflamatorios</Link>
+        </li>
+        <li class="main-lista-li">
+          <Link to={"/category/Antibióticos"}>Antibióticos</Link>
         </li>
       </ul>
     </div>
