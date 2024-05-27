@@ -1,0 +1,36 @@
+.menuLateral {
+    /*position: fixed; /* Fija el div en su posición incluso cuando se hace scroll */
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    margin-top: 20px;
+    top: auto; /* Alinea el div con la parte superior de la pantalla */
+    left: 0; /* Alinea el div con el lado derecho de la pantalla */
+    width: 150px; /* Ancho del menú lateral */
+    height: 250px; /* Altura completa de la pantalla */
+    background-color: #eae3e3; /* Color de fondo del menú */
+    color: rgb(144, 8, 8); /* Color del texto */
+    overflow-x: hidden; /* Deshabilita el scroll horizontal */
+    padding-top: 20px; /* Espacio superior dentro del menú */
+}
+.menuLateral h3{
+    margin-top: 0px;
+}
+
+.main-lista {
+    margin: 0px;
+    padding: 0px;
+}
+
+.main-lista-li a{
+    margin: 0px;
+    padding: 0px;    
+    list-style: disc;
+    text-decoration: none;
+    color: #333; 
+    transition: color 0.3s ease;
+    font-size: larger;
+}
+.main-lista-li a:hover{    
+    color: #33a3ff;    
+}

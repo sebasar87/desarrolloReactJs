@@ -1,0 +1,40 @@
+.menu-Productos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.contenedor-productos {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.producto {
+    flex: 1 1 calc(25% - 20px); /* Cada producto ocupa un tercio del contenedor menos el espacio entre productos */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(216, 164, 86);
+    box-sizing: border-box;
+}
+
+.producto:last-child {
+    margin-right: 0; /* Eliminar margen derecho del último producto en una fila */
+}
+
+.producto h2 {
+    margin-top: 0; /* Eliminar margen superior del título */
+}
+
+.producto p {
+    margin-bottom: 10px; /* Margen inferior para separar los párrafos */
+}
+
+.link{ 
+    text-decoration: none;
+    color: inherit; 
+}
+
+/* Estilos adicionales según sea necesario */

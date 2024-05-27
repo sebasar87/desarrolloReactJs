@@ -1,10 +1,18 @@
-import Navbar from "./components/Navbar"
+import Header from "./components/Header"
+import { BrowserRouter } from "react-router-dom"
+import React from "react"
+import Texto from "./components/Texto"
+import Rutas from "./components/Rutas"
+
+
 
 function App() {
   return (
-    <>
-      <Navbar/>
-    </>
+    <BrowserRouter>
+      <Header/>
+      <Rutas/>
+      <Texto/>
+    </BrowserRouter>
   )
 }
 
