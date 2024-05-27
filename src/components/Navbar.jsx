@@ -2,7 +2,10 @@ import logo from "../assets/img/logo.png"
 import "./navbar.css"
 import { BiCartDownload } from "react-icons/bi";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+
 function Navbar() {
+    const [count,setCount] = useState(0)
     return (
         <>
             <nav className="navBar">
@@ -12,7 +15,7 @@ function Navbar() {
                 <div className="nav-div-list">
                     <ul className="nav-list">                        
                         <li className="nav-list-li">
-                            <Link to={"/item"}>Inicio</Link>
+                            <Link to={"/item"}>Productos</Link>
                         </li>
                         <li className="nav-list-li">
                             <Link to={"/compras"}>Mis compras</Link>
@@ -25,8 +28,10 @@ function Navbar() {
                         </li>
                     </ul>
                     <div className="nav-div-carrito">
-                        <BiCartDownload className="nav-carrito" size="30px" />
-                        <span className="nav-span">0</span>
+                        <Link to={"/carrito"}>
+                            <BiCartDownload className="nav-carrito" size="30px" />
+                            <span className="nav-span">{count}</span>
+                        </Link>                    
                     </div>
                 </div>
                 

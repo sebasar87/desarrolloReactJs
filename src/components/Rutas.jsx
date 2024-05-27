@@ -1,5 +1,6 @@
 import { Routes, Route} from "react-router-dom"
 import Home from "../assets/page/Home"
+import Carrito from "../assets/page/Carrito"
 import Nosotros from "../assets/page/Nosotros"
 import Compras from "../assets/page/Compras"
 import Ofertas from "../assets/page/Ofertas"
@@ -15,6 +16,7 @@ function Rutas() {
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='/compras' element={<Compras />} />
                 <Route path='/ofertas' element={<Ofertas />} />
+                <Route path='/carrito' element={<Carrito />} />
                 <Route path='/item' element={<ItemListContainer />}/>
                 <Route path='/item/:id' element={<ItemListDetailConteiner />}/>
                 <Route path='/category/:categoryid' element={<ItemListContainer/>}/>

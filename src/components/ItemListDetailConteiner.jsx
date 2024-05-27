@@ -10,12 +10,12 @@ function ItemListDetailConteiner() {
     useEffect(()=>{
       const db=getFirestore();
       const itemCollection=collection(db,"productos")
-      console.log("estos son id", id);
+      //console.log("estos son id", id);
       const dato = query(itemCollection, where("id","==",id));
-      console.log("estos son datos", dato);
+      //console.log("estos son datos", dato);
       getDocs(dato).then(snapshot => {
         const productos = snapshot.docs.map(docu => docu.data());
-        console.log("estos son productos", productos);
+        //console.log("estos son productos", productos);
         if (productos.length > 0) {
           setProducto(productos[0]); 
         } else {
