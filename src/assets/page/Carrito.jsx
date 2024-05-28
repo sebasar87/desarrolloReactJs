@@ -1,7 +1,7 @@
 import {useEffect ,useState } from "react"
 import {collection,getDocs,getFirestore, deleteDoc,query,where} from "firebase/firestore"
 
-function Carrito() {
+function Carrito({ count, setCount }) {
   const [compra,setCompra] = useState(null);
 
   useEffect(()=>{
@@ -33,6 +33,7 @@ const eliminarProducto = (productoId) => {
               console.log("Producto eliminado correctamente");
               // Actualizar la lista de productos después de eliminar
               setCompra(compra.filter(producto => producto.id !== productoId));
+              setCount(count - 1);
             })
             .catch((error) => {
               console.error("Error al eliminar producto: ", error);
