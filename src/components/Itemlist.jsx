@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
 import "./itemlist.css"
 
-function Itemlist({ nombre, descripcion, categoria, precio, id }) {
+function Itemlist({ nombre, descripcion, categoria, precio, id, count, setCount }) {
   const [error, setError] = useState(null);
-  const [count,setCount] = useState(0)
-
+  
   const agregarAlCarrito = (item) => {
     const producto = {
       nombre: item.nombre,
@@ -25,6 +24,7 @@ function Itemlist({ nombre, descripcion, categoria, precio, id }) {
       .then(() => {
         console.log("Producto agregado al carrito correctamente");
         setCount(count + 1);
+        console.log("Count es ", count);
       })
       .catch((error) => {
         setError(error.message);
