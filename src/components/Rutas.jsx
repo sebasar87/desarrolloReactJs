@@ -8,7 +8,7 @@ import NotFound from "../assets/page/NotFound"
 import ItemListContainer from "./ItemListContainer"
 import ItemListDetailConteiner from "./ItemListDetailConteiner"
 
-function Rutas() {
+function Rutas({ count, setCount }) {
     return (
         <>
             <Routes>          
@@ -16,8 +16,8 @@ function Rutas() {
                 <Route path='/nosotros' element={<Nosotros />} />
                 <Route path='/compras' element={<Compras />} />
                 <Route path='/ofertas' element={<Ofertas />} />
-                <Route path='/carrito' element={<Carrito />} />
-                <Route path='/item' element={<ItemListContainer />}/>
+                <Route path='/carrito' element={<Carrito count={count} setCount={setCount} />} />
+                <Route path='/item' element={<ItemListContainer count={count} setCount={setCount} />}/>
                 <Route path='/item/:id' element={<ItemListDetailConteiner />}/>
                 <Route path='/category/:categoryid' element={<ItemListContainer/>}/>
                 <Route path='*' element={<NotFound/>} />

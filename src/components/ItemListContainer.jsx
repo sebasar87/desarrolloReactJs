@@ -6,7 +6,7 @@ import "./itemlist.css"
 import Itemlist from "./Itemlist"
 import {collection,getDocs,getFirestore} from "firebase/firestore"
 
-function ItemListContainer() {
+function ItemListContainer({ count, setCount }) {
   const {categoryid}=useParams();
   const [datos,setDatos] = useState(null);
   const [producto,setProducto] = useState(null);
@@ -36,7 +36,7 @@ if(categoryid!=null){
       <div class="menu-Productos">
           {<Main />}
           <div class="contenedor-productos">          
-            {datos && datos.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+            {datos && datos.map(prod=>(<Itemlist key={prod.id}{...prod} count={count} setCount={setCount}/>))}
           </div>
       </div>
     </div>
@@ -48,7 +48,7 @@ if(categoryid!=null){
       <div class="menu-Productos">
         {<Main />}
           <div class="contenedor-productos">
-          {producto && producto.map(prod=>(<Itemlist key={prod.id}{...prod}/>))}
+          {producto && producto.map(prod=>(<Itemlist key={prod.id}{...prod} count={count} setCount={setCount}/>))}
           </div>
       </div>
     </div>

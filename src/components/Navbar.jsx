@@ -4,8 +4,8 @@ import { BiCartDownload } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 
-function Navbar() {
-    const [count,setCount] = useState(0)
+function Navbar({ count, setCount }) {
+    console.log("en el navbar count es ",count)
     return (
         <>
             <nav className="navBar">
