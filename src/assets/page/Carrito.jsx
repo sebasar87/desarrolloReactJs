@@ -1,39 +1,36 @@
-import {useEffect ,useState } from "react"
-import {collection,getDocs,getFirestore, deleteDoc,query,where} from "firebase/firestore"
+import React, { useEffect, useState, useContext } from "react";
+import { CartContext } from "../../Context";
+import { collection, getDocs, getFirestore, deleteDoc, query, where, addDoc } from "firebase/firestore";
 
-function Carrito({ count, setCount }) {
-  const [compra,setCompra] = useState(null);
+function Carrito() {
+  const { cart, count, removeFromCart } = useContext(CartContext);
+  const [compra, setCompra] = useState(null);
 
-  useEffect(()=>{
-
-  const db=getFirestore();
-  const itemCollection=collection(db,"usuario")
-  getDocs(itemCollection).then(snapshot => {
-    const compra = snapshot.docs.map(docu => docu.data());
-    console.log("estos son compra", compra)
-    setCompra(compra);
-    }).catch(error => {
-        console.error("Error obteniendo documentos: ", error);
-    });
-},[])
-
-const eliminarProducto = (productoId) => {
+  useEffect(() => {
     const db = getFirestore();
-  
-    // Realizar la consulta para encontrar el documento a eliminar
+    const itemCollection = collection(db, "usuario");
+    getDocs(itemCollection).then(snapshot => {
+      const compra = snapshot.docs.map(docu => docu.data());
+      console.log("estos son compra", compra);
+      setCompra(compra);
+    }).catch(error => {
+      console.error("Error obteniendo documentos: ", error);
+    });
+  }, []);
+
+  const eliminarProducto = (productoId) => {
+    const db = getFirestore();
     const itemCollection = collection(db, "usuario");
     const q = query(itemCollection, where("id", "==", productoId));
-  
+
     getDocs(q)
       .then((snapshot) => {
         snapshot.forEach((doc) => {
-          // Eliminar el documento encontrado
           deleteDoc(doc.ref)
             .then(() => {
               console.log("Producto eliminado correctamente");
-              // Actualizar la lista de productos después de eliminar
               setCompra(compra.filter(producto => producto.id !== productoId));
-              setCount(count - 1);
+              removeFromCart(productoId);
             })
             .catch((error) => {
               console.error("Error al eliminar producto: ", error);
@@ -45,25 +42,43 @@ const eliminarProducto = (productoId) => {
       });
   };
 
+  const comprarProductos = async () => {
+    try {
+      const db = getFirestore();
+      const compraCollection = collection(db, "compras");
+
+      // Iterar sobre cada producto en el carrito y agregarlo a la colección de compras
+      await cart.forEach(async (producto) => {
+        await addDoc(compraCollection, producto);
+      });
+
+      // Limpiar el carrito después de realizar la compra
+      setCompra([]);
+      removeFromCart(null); // Limpiar el carrito
+      console.log("Compra realizada correctamente.");
+    } catch (error) {
+      console.error("Error al realizar la compra:", error);
+    }
+  };
+
   return (
-    <>
-        <div>
+    <div>
       <h1>Productos en el carrito:</h1>
       <ul>
-        {compra && compra.map((producto, index) => (
+        {cart && cart.map((producto, index) => (
           <li key={index}>
             <h3>{producto.nombre}</h3>
             <p>Descripción: {producto.descripcion}</p>
             <p>Categoría: {producto.categoria}</p>
             <p>Precio: {producto.precio}</p>
+            <p>Cantidad: {producto.cantidad}</p>
             <button onClick={() => eliminarProducto(producto.id)}>Eliminar</button>
           </li>
         ))}
       </ul>
+      <button onClick={comprarProductos}>Comprar Productos</button>
     </div>
-    </>
-  )
+  );
 }
-
 
 export default Carrito;

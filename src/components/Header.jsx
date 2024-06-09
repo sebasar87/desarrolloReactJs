@@ -17,10 +17,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 initializeApp(firebaseConfig);
-function Header({ count, setCount }) {
+function Header() {
     return (
         <>
-            <Navbar count={count} setCount={setCount}/>            
+            <Navbar />            
             <Myitems greeting={"Hola, bienvenido al mundo del mañana "}/>           
         </>        
     )

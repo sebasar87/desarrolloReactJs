@@ -1,10 +1,14 @@
+import React, { useContext } from "react";
 import logo from "../assets/img/logo.png"
 import "./navbar.css"
 import { BiCartDownload } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { CartContext } from "../Context";
+//import { useState } from "react";
 
-function Navbar({ count, setCount }) {
+function Navbar() {
+    // Usa useContext para acceder a count
+    const { count } = useContext(CartContext); 
     console.log("en el navbar count es ",count)
     return (
         <>
