@@ -3,19 +3,20 @@ import { BrowserRouter } from "react-router-dom"
 import React from "react"
 import Texto from "./components/Texto"
 import Rutas from "./components/Rutas"
-import { useState, useEffect } from "react";
+import { CartProvider } from "./Context"
 
 
 
 
 function App() {
-  const [count,setCount] = useState(0)
   return (
-    <BrowserRouter>
-      <Header count={count} setCount={setCount}/>
-      <Rutas count={count} setCount={setCount}/>
-      <Texto/>
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <Header/>
+        <Rutas/>
+        <Texto/>
+      </BrowserRouter>
+    </CartProvider>
   )
 }
 
